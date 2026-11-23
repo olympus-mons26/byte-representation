@@ -106,4 +106,4 @@ This project is licensed under the MIT License. See the [`LICENSE`](LICENSE) fil
 
 ***
 
-Made by Baljit Panda [olympus-mons26](https://olympus-mons26/byte-representation)
+Made by Baljit Panda ([olympus-mons26](https://olympus-mons26/byte-representation)).
