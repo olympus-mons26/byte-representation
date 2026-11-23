@@ -1,0 +1,23 @@
+# Arduino build outputs
+build/
+*.hex
+*.elf
+*.bin
+*.eep
+
+# Arduino IDE temporary and generated files
+*.ino.eide
+*.ino.cpp
+*.ino.map
+*.ino.with_bootloader.bin
+*.ino.with_bootloader.hex
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.tmp
