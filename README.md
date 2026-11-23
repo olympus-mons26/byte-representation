@@ -87,10 +87,9 @@ decimalValue = decimalValue * 2 + (binary[i] - '0');
 
 For example, `01010101` is:
 
-\[
-0\times128 + 1\times64 + 0\times32 + 1\times16 +
-0\times8 + 1\times4 + 0\times2 + 1\times1 = 85
-\]
+```text
+0 × 128 + 1 × 64 + 0 × 32 + 1 × 16 + 0 × 8 + 1 × 4 + 0 × 2 + 1 × 1 = 85
+```
 
 The LEDs display the entered bits in the same left-to-right order.
 
@@ -104,3 +103,7 @@ The LEDs display the entered bits in the same left-to-right order.
 ## License
 
 This project is licensed under the MIT License. See the [`LICENSE`](LICENSE) file for the full license text.
+
+***
+
+Made by Baljit Panda [olympus-mons26](https://olympus-mons26/byte-representation)
