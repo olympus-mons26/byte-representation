@@ -1,3 +1,5 @@
+#include <EEPROM.h>
+
 int ledPins[8] = {2, 3, 4, 5, 6, 7, 8, 9};
 
 void setup()
@@ -16,6 +18,35 @@ void setup()
     Serial.println("==================================");
     Serial.println("Enter 8 bits. Spaces are ignored.");
     Serial.println("Example: 0101 0101");
+
+    // Restore previous sequence from EEPROM
+    if (EEPROM.read(1) == 123)
+    {
+        byte savedValue = EEPROM.read(0);
+
+        String binary = "";
+
+        for (int i = 7; i >= 0; i--)
+        {
+            binary += bitRead(savedValue, i) ? '1' : '0';
+        }
+
+        for (int i = 0; i < 8; i++)
+        {
+            digitalWrite(ledPins[i],
+                         binary[i] == '1' ? HIGH : LOW);
+        }
+
+        Serial.println("----------------------------");
+        Serial.println("Previous sequence restored!");
+
+        Serial.print("Binary: ");
+        Serial.println(binary);
+
+        Serial.print("Decimal: ");
+        Serial.println(savedValue);
+        Serial.println("----------------------------");
+    }
 }
 
 void loop()
@@ -69,6 +100,10 @@ void loop()
             digitalWrite(ledPins[i],
                          binary[i] == '1' ? HIGH : LOW);
         }
+
+        // Save sequence in EEPROM
+        EEPROM.update(0, decimalValue);
+        EEPROM.update(1, 123);
 
         Serial.println("----------------------------");
         Serial.print("Binary: ");
